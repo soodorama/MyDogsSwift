@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LAq-NG-igm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dogs-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="My_Dogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dogs" id="Mpx-2l-4bl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="d5u-eq-xNp"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="yxd-7M-7qQ" kind="show" id="aTJ-a6-vEG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Add DogVC-->
+        <scene sceneID="vVS-dl-NL7">
+            <objects>
+                <viewController id="Ots-dZ-2op" customClass="AddDogVC" customModule="My_Dogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="law-OX-RGj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dogs Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g9f-CJ-m68">
+                                <rect key="frame" x="16" y="96" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dogs Color" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j7H-71-7zI">
+                                <rect key="frame" x="16" y="142" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dogs Favorite Treat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7P7-4a-KI8">
+                                <rect key="frame" x="16" y="188" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJv-Lz-1CB">
+                                <rect key="frame" x="157" y="528" width="60" height="30"/>
+                                <state key="normal" title="Add Dog"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KKb-Ad-MCe">
+                                <rect key="frame" x="98" y="318" width="178" height="178"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="PTx-wN-Zbd"/>
+                                    <constraint firstAttribute="height" constant="178" id="pru-Ua-CLF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BJv-Lz-1CB" firstAttribute="top" secondItem="KKb-Ad-MCe" secondAttribute="bottom" constant="32" id="276-i6-Auv"/>
+                            <constraint firstItem="j7H-71-7zI" firstAttribute="top" secondItem="g9f-CJ-m68" secondAttribute="bottom" constant="16" id="6Ip-iy-tnw"/>
+                            <constraint firstItem="ImZ-8m-Z7M" firstAttribute="trailing" secondItem="j7H-71-7zI" secondAttribute="trailing" constant="16" id="7G6-ae-eqR"/>
+                            <constraint firstItem="KKb-Ad-MCe" firstAttribute="centerX" secondItem="law-OX-RGj" secondAttribute="centerX" id="CqC-e7-iwF"/>
+                            <constraint firstItem="KKb-Ad-MCe" firstAttribute="top" secondItem="7P7-4a-KI8" secondAttribute="bottom" constant="100" id="DAK-kx-5yY"/>
+                            <constraint firstItem="ImZ-8m-Z7M" firstAttribute="trailing" secondItem="7P7-4a-KI8" secondAttribute="trailing" constant="16" id="Oo3-ye-cdm"/>
+                            <constraint firstItem="BJv-Lz-1CB" firstAttribute="centerX" secondItem="law-OX-RGj" secondAttribute="centerX" id="ZEO-Ol-zlj"/>
+                            <constraint firstItem="7P7-4a-KI8" firstAttribute="top" secondItem="j7H-71-7zI" secondAttribute="bottom" constant="16" id="ceY-Zd-vwv"/>
+                            <constraint firstItem="g9f-CJ-m68" firstAttribute="top" secondItem="ImZ-8m-Z7M" secondAttribute="top" constant="32" id="cmQ-wW-pkd"/>
+                            <constraint firstItem="ImZ-8m-Z7M" firstAttribute="trailing" secondItem="g9f-CJ-m68" secondAttribute="trailing" constant="16" id="f8Q-Gu-FDS"/>
+                            <constraint firstItem="j7H-71-7zI" firstAttribute="leading" secondItem="ImZ-8m-Z7M" secondAttribute="leading" constant="16" id="jDt-13-VB6"/>
+                            <constraint firstItem="g9f-CJ-m68" firstAttribute="leading" secondItem="ImZ-8m-Z7M" secondAttribute="leading" constant="16" id="jab-oi-rsD"/>
+                            <constraint firstItem="7P7-4a-KI8" firstAttribute="leading" secondItem="ImZ-8m-Z7M" secondAttribute="leading" constant="16" id="sM9-i7-gnb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ImZ-8m-Z7M"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="v9d-9C-2F0">
+                        <barButtonItem key="leftBarButtonItem" title="Dogs" id="UgC-12-DUq"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f43-Qd-2lG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3172" y="158.77061469265368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rCI-HG-KHO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LAq-NG-igm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m2f-wb-WuW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TU7-9m-90P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KGf-bT-rPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0YX-9x-xgK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yxd-7M-7qQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Cc-vv-2l1">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ots-dZ-2op" kind="relationship" relationship="rootViewController" id="gOx-A5-qjM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iW5-a4-dCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2232.8000000000002" y="158.77061469265368"/>
+        </scene>
+    </scenes>
+</document>
