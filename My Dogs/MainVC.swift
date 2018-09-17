@@ -10,6 +10,10 @@ import UIKit
 
 class MainVC: UIViewController {
 
+    @IBAction func addDogPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "AddDogSegue", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

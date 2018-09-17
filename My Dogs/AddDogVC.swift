@@ -10,8 +10,26 @@ import UIKit
 
 class AddDogVC: UIViewController {
 
+    @IBOutlet weak var dogNameLabel: UITextField!
+    @IBOutlet weak var dogColorLabel: UITextField!
+    @IBOutlet weak var dogTreatLabel: UITextField!
+    
+    @IBOutlet weak var dogImagePicker: UIImageView!
+    
+    let imagePicker = UIImagePickerController()
+    
+    @IBAction func backPressed(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    @IBAction func addDogPressed(_ sender: UIButton) {
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }

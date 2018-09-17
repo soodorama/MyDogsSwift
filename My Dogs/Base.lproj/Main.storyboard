@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,14 +18,52 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C25-nm-5Mu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="187" id="hPc-7k-Ptb">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="187"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hPc-7k-Ptb" id="hFh-ut-ocy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="186.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="omO-5i-yus">
+                                                    <rect key="frame" x="15" y="11" width="345" height="165"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="omO-5i-yus" firstAttribute="top" secondItem="hFh-ut-ocy" secondAttribute="topMargin" id="D5C-ur-Dob"/>
+                                                <constraint firstItem="omO-5i-yus" firstAttribute="leading" secondItem="hFh-ut-ocy" secondAttribute="leadingMargin" id="ryw-vP-Bv1"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="omO-5i-yus" secondAttribute="trailing" id="w4e-Ki-nZs"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="omO-5i-yus" secondAttribute="bottom" id="xZs-SO-dJ1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C25-nm-5Mu" secondAttribute="bottom" id="D2T-wn-YnO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C25-nm-5Mu" secondAttribute="trailing" id="JBJ-iy-FZK"/>
+                            <constraint firstItem="C25-nm-5Mu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RJ0-MR-NeV"/>
+                            <constraint firstItem="C25-nm-5Mu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cXx-fS-6oN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Dogs" id="Mpx-2l-4bl">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="d5u-eq-xNp"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="d5u-eq-xNp">
+                            <connections>
+                                <action selector="addDogPressed:" destination="BYZ-38-t0r" id="QT9-FC-UhS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="yxd-7M-7qQ" kind="show" id="aTJ-a6-vEG"/>
+                        <segue destination="yxd-7M-7qQ" kind="show" identifier="AddDogSegue" id="aTJ-a6-vEG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -57,17 +96,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJv-Lz-1CB">
-                                <rect key="frame" x="157" y="528" width="60" height="30"/>
-                                <state key="normal" title="Add Dog"/>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KKb-Ad-MCe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pug" translatesAutoresizingMaskIntoConstraints="NO" id="KKb-Ad-MCe">
                                 <rect key="frame" x="98" y="318" width="178" height="178"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="178" id="PTx-wN-Zbd"/>
                                     <constraint firstAttribute="height" constant="178" id="pru-Ua-CLF"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJv-Lz-1CB">
+                                <rect key="frame" x="157" y="528" width="60" height="30"/>
+                                <state key="normal" title="Add Dog"/>
+                                <connections>
+                                    <action selector="addDogPressed:" destination="Ots-dZ-2op" eventType="touchUpInside" id="TSd-g7-Vo8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmt-kV-ecT">
+                                <rect key="frame" x="98" y="318" width="178" height="178"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="178" id="FqI-FS-ufW"/>
+                                    <constraint firstAttribute="width" constant="178" id="cOQ-Xb-MfE"/>
+                                </constraints>
+                                <state key="normal" title="Add Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -76,7 +128,9 @@
                             <constraint firstItem="ImZ-8m-Z7M" firstAttribute="trailing" secondItem="j7H-71-7zI" secondAttribute="trailing" constant="16" id="7G6-ae-eqR"/>
                             <constraint firstItem="KKb-Ad-MCe" firstAttribute="centerX" secondItem="law-OX-RGj" secondAttribute="centerX" id="CqC-e7-iwF"/>
                             <constraint firstItem="KKb-Ad-MCe" firstAttribute="top" secondItem="7P7-4a-KI8" secondAttribute="bottom" constant="100" id="DAK-kx-5yY"/>
+                            <constraint firstItem="qmt-kV-ecT" firstAttribute="centerX" secondItem="law-OX-RGj" secondAttribute="centerX" id="KL1-Wo-6KN"/>
                             <constraint firstItem="ImZ-8m-Z7M" firstAttribute="trailing" secondItem="7P7-4a-KI8" secondAttribute="trailing" constant="16" id="Oo3-ye-cdm"/>
+                            <constraint firstItem="qmt-kV-ecT" firstAttribute="top" secondItem="7P7-4a-KI8" secondAttribute="bottom" constant="100" id="Shv-sA-iMA"/>
                             <constraint firstItem="BJv-Lz-1CB" firstAttribute="centerX" secondItem="law-OX-RGj" secondAttribute="centerX" id="ZEO-Ol-zlj"/>
                             <constraint firstItem="7P7-4a-KI8" firstAttribute="top" secondItem="j7H-71-7zI" secondAttribute="bottom" constant="16" id="ceY-Zd-vwv"/>
                             <constraint firstItem="g9f-CJ-m68" firstAttribute="top" secondItem="ImZ-8m-Z7M" secondAttribute="top" constant="32" id="cmQ-wW-pkd"/>
@@ -88,8 +142,18 @@
                         <viewLayoutGuide key="safeArea" id="ImZ-8m-Z7M"/>
                     </view>
                     <navigationItem key="navigationItem" id="v9d-9C-2F0">
-                        <barButtonItem key="leftBarButtonItem" title="Dogs" id="UgC-12-DUq"/>
+                        <barButtonItem key="leftBarButtonItem" title="Dogs" id="UgC-12-DUq">
+                            <connections>
+                                <action selector="backPressed:" destination="Ots-dZ-2op" id="G5w-bw-kRW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dogColorLabel" destination="j7H-71-7zI" id="8Aw-6i-ngy"/>
+                        <outlet property="dogImagePicker" destination="KKb-Ad-MCe" id="gGz-AF-Bo0"/>
+                        <outlet property="dogNameLabel" destination="g9f-CJ-m68" id="5sl-f9-KjJ"/>
+                        <outlet property="dogTreatLabel" destination="7P7-4a-KI8" id="53C-zd-5Hd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f43-Qd-2lG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,4 +196,7 @@
             <point key="canvasLocation" x="2232.8000000000002" y="158.77061469265368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pug" width="1181" height="1024"/>
+    </resources>
 </document>
